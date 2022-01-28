@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circulo y cuadrado</title>
+</head>
+<body>
+    <script>
+        const pi = 3.1416
+        class Circulo {
+            constructor (radio){
+                this.radio = radio;
+            }
+            area () {
+                return pi * this.radio * this.radio;
+            }
+            perimetro () {
+                return 2 * pi * this.radio;
+            }
+            diametro () {
+                return 2 * this.radio;
+            }
+        }
+        let r = prompt ("Dime el radio del circulo");
+        const circulo1 = new Circulo (r);
+        document.write("El radio es: " + circulo1.radio + "<br>");
+        document.write("El área del circulo es:" + circulo1.area() + "<br>");
+        document.write("El perímetro del circulo es: " + circulo1.perimetro() + "<br>");
+        document.write("El diametro del circulo es: " + circulo1.diametro() + "<br>");
+
+        class Suma {
+            constructor (sumando1, sumando2) {
+                this.sumando1 = num1;
+                this.sumando2 = num2;
+            }
+            suma () {
+                return this.sumando1 + this.sumando2;
+            }
+        }
+        
+        let num1 = Number(prompt("El primer número para sumar es:"));
+        let num2 = Number(prompt("El segundo número para sumar es:"));
+        const suma1 = new Suma (num1, num2);
+        document.write("El primer sumando es: " + suma1.sumando1 + "<br>");
+        document.write("El segundo sumando es: " + suma1.sumando2 + "<br>");
+        document.write("La suma es: " + suma1.suma() + "<br>");
+    </script>
+</body>
+</html>
