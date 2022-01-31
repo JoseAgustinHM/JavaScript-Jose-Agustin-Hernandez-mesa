@@ -12,6 +12,27 @@
         hasta ingresa 9999 (no sumar dicho valor, solamente indica que ha finalizado
         la carga). Imprimir el valor acumulado e informar si dicho valor es cero,
         mayor a cero o menor a cero.*/
+        let num;
+        let sum = 0;
+
+        do {
+            num = parseInt(prompt("Introduce un número (9999 debe de ser el último)"));
+            if (num != 9999) {
+                sum = sum + num;
+            }
+        } while (num != 9999);
+        
+        document.write("El total es: " + sum + "<br>");
+
+        if (sum > 0 ) {
+            document.write("La cantidad acumulada es mayor a cero");
+        } else {
+            if (sum == 0) {
+                document.write("La cantidad acumulada es cero");
+            } else {
+                document.write("La cantidad acumulada es menor a cero");
+            }
+        }
     </script>
 </body>
 </html>

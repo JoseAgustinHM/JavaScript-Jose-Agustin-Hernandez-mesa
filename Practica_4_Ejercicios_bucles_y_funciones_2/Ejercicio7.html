@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        /*Realizar la carga de 10 valores enteros por teclado. Se desea conocer:
+            a)La cantidad de valores negativos ingresados.
+            b)La cantidad de valores negativos ingresados.
+            c)La cantidad de múltiplos de 15.
+            d)El valor acumulado de los números ingresados que son pares.*/
+            let i, num, negativos = 0, positivos = 0, mulp15 = 0, sumapar = 0;
+
+            for (i = 1; i <= 10; i++) {
+                num=parseInt(prompt("índique un número:"));
+                document.write(num + " - ");
+
+                if(num < 0){
+                    negativos = negativos + 1;
+                }
+                if (num >= 0){
+                    positivos = positivos + 1;
+                }
+                if (num%15 == 0){
+                    mulp15 = mulp15 + 1;
+                }
+                if (num%2 == 0){
+                    sumapar = sumapar + 1;
+                }
+            }
+
+            document.write("<br> <string>a</string> - La cantidad de números negativos introducidos es: " + negativos);
+            document.write("<br> <string>b</string> - La cantidad de números positivos introducidos es: " + positivos);
+            document.write("<br> <string>c</string> - La cantidad de números que son multiplos de 15 son: " + mulp15);
+            document.write("<br> <string>d</string> - La cantidad de números pares es: " + sumapar);
+    </script>
+</body>
+</html>
