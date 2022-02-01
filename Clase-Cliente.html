@@ -10,6 +10,7 @@
     <script>
         let saldoTotal;
         let saldoRestante;
+        
         class Cliente {
             constructor (nombre, apellido1, apellido2, saldo) {
                 this.nombre = nombre;
@@ -30,6 +31,7 @@
         let nombre = prompt("Introduce el nombre"); apellido1 = prompt("Introduce el primer apellido"), apellido2 = prompt("Introduce tu segundo apellido");
         let saldo = Number(prompt("Introduce el saldo que tienes")) , deposito = Number(prompt("Introduce la cantidad que desea ingresar")), cantidadAExtraer = Number(prompt("Introduce la cantidad que quieres extraer"));
         const cliente1 = new Cliente(nombre, apellido1, apellido2, saldo);
+
         document.write("Datos del cliente " + cliente1.nombre + " " + cliente1.apellido1 + " " + cliente1.apellido2 + " y su saldo actual es " + cliente1.saldo + "<br>");
         document.write("Vas a depositar " + deposito + ". El saldo que tienes actualmente es " + cliente1.depositar() + "<br>");
         document.write("El saldo que desea extraer es " + cantidadAExtraer + ". El saldo restante es " + cliente1.extraer() + "<br>");
