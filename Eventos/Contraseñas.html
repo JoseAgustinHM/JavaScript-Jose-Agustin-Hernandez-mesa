@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Codificar una página en la que aparezcan dos campos de texto tipo password. 
+        Cuando se presione un botón mostrar si las dos claves ingresadas son iguales 
+        o no (es muy común solicitar al operador el ingreso de dos veces de su clave 
+        para validar si las escribió correctamente, esto se hace cuando se crea una 
+        password para el ingreso a un sitio o para el cambio de una existente). -->
+    <form name="Validar_Contraseña">
+        <label id="lbl_password">Pon aquí la contraseña:</label>
+        <input id="contraseña1" type="password">
+        <br>
+        <label id="lbl_password">Pon aquí la contraseña de nuevo</label>
+        <input id="contraseña2" type="password">
+        <br>
+        <input id="btn_validar" type="button" value="Validar clave" onclick="ValidarContraseña()">
+    </form>
+    
+    <script>
+        function ValidarContraseña(){
+            if (document.getElementById("contraseña1").value != document.getElementById("contraseña2").value){
+                alert("Contraseñas diferentes");
+            } else {
+                alert("Contraseñas iguales");
+            }
+        }
+
+    </script>
+</body>
+</html>

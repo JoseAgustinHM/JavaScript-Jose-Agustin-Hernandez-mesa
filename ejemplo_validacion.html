@@ -1,0 +1,189 @@
+<script>
+
+
+
+
+    function validacion() {
+  
+      
+      //validación del nombre.
+      nombre = document.getElementById("nombreTxt").value;
+      if (nombre==""){
+          alert("Debes de introducir el nombre");
+          return false;
+      }
+      //fin del nombre
+  
+  
+      // Validamos la edad.
+      edad = document.getElementById("edadTxt").value;
+      if(isNaN(edad) ) {
+          alert("Debes de introducir un valor numérico");
+          return false;
+      }
+      if (edad < 10 || edad > 40){
+          alert ("Debes de poner una edad entre 10 y 40 ");
+          return false;
+      }
+  
+     
+  
+  
+  
+      //validamos el dniTxt
+      dni = document.getElementById("dniTxt").value;
+      letra='TRWAGMYFPDXBNJZSQVHLCKET';
+      //alert ("Entro al dni");
+      expresionRegularDni = /^\d{8}[a-zA-Z]$/; //Comienza con 8 letras y un caracter
+      if (!expresionRegularDni.test(dni)){
+          alert ("Error en el Dni");
+          return false;
+      }
+      miNumero = dni.substr(0, dni.length-1);  //sacamos el número que he puesto
+      miLetra = dni.substr(dni.length-1, 1);   //sacamos la letra que he puesto
+      miNumero = miNumero % 23;                //sacamos el índice correspondiente a mi letra a partir del número
+      letraSeleccionada = letra.substring(miNumero, miNumero +1);  //Sacamos la letra que me corresponde
+      //alert ("Letra correcta " + letraSeleccionada + " Y la que he puesto es " + miLetra);
+      if (letraSeleccionada!=miLetra.toUpperCase()){
+          alert("La letra del dni, no corresponde");
+          return false;
+      }
+      //fin validación dni
+  
+  
+  
+  
+  
+      //validamos el telefono
+      telefono = document.getElementById("telefonoTxt").value;
+      if( !(/^\d{9}$/.test(telefono)) ) {
+          alert("El número de teléfono no es correcto");
+          return false;
+      }
+      //fin validackión del teléfono
+  
+  
+      
+  
+     
+      //validar un select 
+      indice = document.getElementById("estudiosSelect").selectedIndex;
+     // alert("Mi indice es " + indice);
+      if( indice == null || indice == 0 ) {
+          alert ("Debes elegir una opción de estudios");
+          return false;
+      }
+  
+      //fin validación del select
+  
+  
+  
+      //validar el email
+      email = document.getElementById("emailTxt").value;
+      //alert(email);
+      expresionRegularEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+      if (!expresionRegularEmail.test(email)){
+     // if( !(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(email)) ) {
+          alert ("El email no es correcto");
+          return false;
+      }
+      //fin validación del email
+  
+  
+  
+      //validar los botones radio
+      opcionesRadio = document.getElementsByName("preguntaRadio");
+      var seleccionado = false;
+      for(var i=0; i<opcionesRadio.length; i++) {
+        if(opcionesRadio[i].checked) {
+              seleccionado = true;
+              break;  //salimos del for
+        }
+      }
+       
+      if(!seleccionado) {
+          alert ("No has seleccionado una de las tres opciones");
+          return false;
+      }
+  
+  
+  
+      /*validación del chek condiciones sobre uno sólo
+      elemento = document.getElementById("condicionesCheck");
+      if( !elemento.checked ) {
+          return false;
+      }
+      */
+  
+      //validación de los dos chek.
+      //alert ("Entro en check");
+      miFormulario = document.getElementById("formulario");
+      //alert (miFormulario.elements.length);
+      
+      for(var i=0; i<miFormulario.elements.length; i++) {
+          var elemento = miFormulario.elements[i];
+          if(elemento.type == "checkbox") {
+              if (!elemento.checked){
+                  alert ("Debes aceptar todas las condiciones");
+                  return false;
+              }
+                  
+          }
+          
+          
+      }
+  //fin validación checkbox
+      
+  
+    }
+  
+  
+    
+  </script>
+  
+  
+  <form id="formulario" action="https://educacionadistancia.juntadeandalucia.es/centros/jaen/pluginfile.php/1052319/mod_resource/content/1/salto.html" onsubmit="return validacion()">
+  
+      <label>(*)Nombre:</label> <input type="text" id="nombreTxt" name="nombreTxt" /><br>
+  
+  
+      <label>(*)Edad:</label> <input type="text" id="edadTxt" name="edadTxt" /><br>
+  
+      <label>(*)Dni:</label> <input type="text" id="dniTxt" name="dniTxt" /><br>
+  
+  
+  
+      <label>(*)Telefono:</label> <input type="text" id="telefonoTxt" name="telefonoTxt" /><br>
+  
+      
+      <label>(*)Selecciona opcion</label>
+      <select id="estudiosSelect" name="estudiosSelect">
+          <option value="">No opción</option>
+          <option value="1">ESO o ciclo grado medio</option>
+          <option value="2">Bachillerato</option>
+          <option value="3">Ciclo formativo grado superior</option>
+          <option value="4">Grado</option>
+        </select>
+      <br>
+  
+      <label>(*)Email:</label> <input type="text" id="emailTxt" name="emailTxt" /><br>
+  
+      
+      
+      <label>Sueles contestar a todas las preguntas???</label>
+      <input type="radio" value="si"      name="preguntaRadio" id="pregunta_si"/> SI
+      <input type="radio" value="no"      name="preguntaRadio" id="pregunta_no"/> NO
+      <input type="radio" value="nsnc"    name="preguntaRadio" id="pregunta_nsnc"/> NS/NC
+      <br>
+      
+      <label>Deja tu Comentario:</label><textarea id="comentarioTxtArea" name="comentarioTxtArea" placeholder="...Escribe algo.." ></textarea> <br>
+  
+  
+      <label>Debes de marcar todas las condiciones</label>
+      <input type="checkbox" value="condiciones" name="condicionesCheck" id="condiciones"/> He leído y acepto las condiciones
+      <input type="checkbox" value="privacidad" name="privacidadCheck" id="privacidad"/> He leído la política de privacidad
+      <br>
+  
+      <input id="submit" type="submit" value="Enviar" />
+  
+  </form>

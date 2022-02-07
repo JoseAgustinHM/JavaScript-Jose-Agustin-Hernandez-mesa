@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de objetos predefinidos en JavaScript</title>
+</head>
+<body>
+    <form name="Cambia_Color">
+        <b> ¿Qué color quieres para el fondo?<br></b>
+        <select id="sel_colores">
+            <option value="red">Rojo</option>
+            <option value="blue">Azul</option>
+            <option value="yellow">Amarillo</option>
+            <option value="green">Verde</option>
+        </select>
+
+        <input id="btn_aceptar" type="button" value="Cambiar color" onclick="CambiaColor()">
+
+    </form>
+    <script type="text/javascript">
+
+        function CambiaColor(){
+            document.bgColor=document.Cambia_Color.sel_colores.value;
+        }
+    </script>
+</body>
+</html>
