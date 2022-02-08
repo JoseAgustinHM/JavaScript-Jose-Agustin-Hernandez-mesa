@@ -72,19 +72,6 @@
                 alert("Formato del email erroneo");
                 return false;
             }
-            // Sexo.
-            let sexo = document.getElementsByName("SexoRadio");
-            let opcion = false;
-            for (let i = 0; i < sexo.length; i++){
-                if (sexo[i].checked) {
-                    opcion = true;
-                    break;
-                }
-            }
-            if (!opcion){
-                alert("Selecciona un sexo");
-                return false;
-            }
             // Cuadro de texto.
             if (document.mi_formulario.txta_texto.value.length == 0) {
                 alert ("No hay texto introducido");
