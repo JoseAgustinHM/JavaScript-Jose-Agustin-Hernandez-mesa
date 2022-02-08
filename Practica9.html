@@ -9,6 +9,7 @@
 </head>
 <body>
     <!--Formulario-->
+    <h2><center>Por favor rellene el siguiente formulario</center></h2>
     <form name="mi_formulario" onsubmit="return Validacion()">
         <label id="lbl_nombre" value="Nombre">Nombre</label>
         <input id="txt_nombre" type="text"><br>
@@ -45,25 +46,26 @@
     <script>
         // Validaciones.
         function Validacion() {
+            // Nombre.
             let nombre = document.getElementById("txt_nombre").value;
             if (nombre==""){
-                alert("No has introducido un nombre");
+                alert("No has introducido tu nombre");
                 return false;
             }
-
+            // Apellidos.
             let apellidos = document.getElementById("txt_apellido").value;
             if (apellidos == "") {
                 alert("No has introducido tus apellidos");
                 return false;
             }
-            
+            // Email.
             let email = document.getElementById("txt_email").value;
             let email2 = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
             if (!email2.test(email)) {
                 alert("Formato del email erroneo");
                 return false;
             }
-
+            // Sexo.
             let sexo = document.getElementsByName("SexoRadio");
             let opcion = false;
             for (let i = 0; i < sexo.length; i++){
@@ -76,22 +78,29 @@
                 alert("Selecciona un sexo");
                 return false;
             }
-
+            // Cuadro de texto.
             if (document.mi_formulario.txta_texto.value.length == 0) {
                 alert ("No hay texto introducido");
                 return false;
             }
-
+            // Check de la condición.
             let checkf = document.getElementById("txt_condicion").checked;
             if (checkf == 0) {
                 alert("Debes de aceptar la condición")
             }
-
+            // Procedencia.
             let procedencia = document.getElementById("procedencia").selectedIndex;
             if (procedencia == null || procedencia == 0) {
                 alert("Debes seleccionar una procedencia");
                 return false;
             }
+            // Archivo adjunto.
+            let arch_adjunt = document.getElementById("txt_archivo").value;
+            if (arch_adjunt == 0) {
+                alert("No hay introducido ningún archivo adjunto");
+                return false;
+            }
+
         }
     </script>
 </body>
