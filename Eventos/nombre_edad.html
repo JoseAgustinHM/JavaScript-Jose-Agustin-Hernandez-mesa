@@ -8,6 +8,7 @@
 </head>
 <body>
     <!--Confeccionar un formulario que permita ingresar el nombre y edad de una persona y luego lo muestre en un mensaje.-->
+    
     <form onsubmit="nom_eda()">
         <label id="lbl_nombre" value="Nombre">Nombre</label>
         <input id="txt_nombre" type="text"><br><br>
@@ -15,9 +16,11 @@
         <input id="txt_edad" type="text"><br><br>
         <input id="txt_escribir" type="submit" value="Escribir">
     </form>
+    
     <script>
         function nom_eda() {
-        document.write("Te llamas " + document.getElementById("txt_nombre").value + " y tienes " + document.getElementById("txt_edad").value + " años.");
+        document.write("Te llamas " + document.getElementById("txt_nombre").value + 
+        " y tienes " + document.getElementById("txt_edad").value + " años.");
         }
     </script>
 </body>
