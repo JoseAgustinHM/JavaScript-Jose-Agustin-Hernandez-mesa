@@ -93,7 +93,8 @@
             // Check de la condición.
             let checkf = document.getElementById("txt_condicion").checked;
             if (checkf == 0) {
-                alert("Debes de aceptar la condición")
+                alert("Debes de aceptar la condición");
+                return false;
             }
             // Procedencia.
             let procedencia = document.getElementById("procedencia").selectedIndex;
