@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Codificar una página que permita ingresar una password y 
+        luego muestre una ventana de alerta si tiene menos de 
+        5 caractéres-->
+
+    <form> 
+        <input id="contraseña" type="password"><br><br>
+        <input type="button" value="Confirmar" onclick="ventana()">    
+    </form>
+
+    <script>
+        let menor_de_5 = document.getElementById("contraseña").value;
+        function menor_5() {
+            if (menor_de_5.length < 5) {
+                document.write("La contraseña tiene menos de cinco caractéres");
+            } else {
+                document.write("El largo de la clave es correcto.")
+            }
+        }
+        function ventana() {
+            let nueva_ventana = window.open();
+            
+            nueva_ventana.document.write(menor_5());
+        }
+    </script>
+    
+</body>
+</html>

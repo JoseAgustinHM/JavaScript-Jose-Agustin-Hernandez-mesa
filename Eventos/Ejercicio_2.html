@@ -13,14 +13,14 @@
         el contador vale 2, .....)-->
         
         <form name="Contador">
-            <input id="btn_contador" type="button" value="Contador" onclick="AumentarContador()">
+            <input id="btn_contador" type="button" value="incrementar" onclick="AumentarContador()">
         </form>
 
         <script>
+            let contador = 0;
             function AumentarContador() {
-                let contador = 0;
-                let suma = contador + 1;
-                document.write(suma);
+                contador ++
+                alert ("El contador ahora vale: " + contador);
             }
         </script>
 </body>
