@@ -8,6 +8,7 @@
     <title>Práctica 9</title>
 </head>
 <body>
+    <!--Formulario-->
     <form name="mi_formulario" onsubmit="return Validacion()">
         <label id="lbl_nombre" value="Nombre">Nombre</label>
         <input id="txt_nombre" type="text"><br>
@@ -15,7 +16,7 @@
         <input id="txt_apellido" type="text"><br>
         <label id="lbl_email" value="Email">Email</label>
         <input id="txt_email" type="text"><br>
-        <input id="txt_sexo" name="SexoRadio" type="radio">
+        <input id="txt_sexo" name="SexoRadio" type="radio" checked>
         <label id="lbl_sexo" value="Hombre">Hombre</label><br>
         <input id="txt_sexo"  name="SexoRadio" type="radio">
         <label id="lbl_sexo" value="Mujer">Mujer</label><br>
@@ -42,6 +43,7 @@
     </form>
 
     <script>
+        // Validaciones.
         function Validacion() {
             let nombre = document.getElementById("txt_nombre").value;
             if (nombre==""){
@@ -88,12 +90,6 @@
             let procedencia = document.getElementById("procedencia").selectedIndex;
             if (procedencia == null || procedencia == 0) {
                 alert("Debes seleccionar una procedencia");
-                return false;
-            }
-
-            let arch_adju = document.getElementById("txt_archivo").value;
-            if (arch_adju == "") {
-                alert("No has seleccionado ningún archivo");
                 return false;
             }
         }
